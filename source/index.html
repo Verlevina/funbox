@@ -5,13 +5,38 @@
 	<title>Funbox</title>
 	<link rel="stylesheet" href="css/style.min.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../../770025-mishka/source/sass/variables.scss">
 </head>
 <body class="page-body">
-<div class="wrapper page-body__wrapper">
+<section class="wrapper page-body__wrapper">
 	<h1 class="visually-hidden">Корм для кошек Нямушка</h1>
 	<p class="page-title">Ты сегодня покормил кота?</p>
-
-</div>
+  <ul class="product-list">
+    <li class="product-list__item">
+      <input class="product-list__input" id="inputFuaGra" type="checkbox" name="product" value="фуа-гра">
+      <label for="inputFuaGra">
+        <div class="product-list__wrapper">
+          <span class="product-list__message">Сказочное заморское яство</span>
+          <h3 class="product-list__title">Нямушка <br> <span>с фуа-гра</span></h3>
+          <ul class="product-description__list">
+            <li class="product-description__item">10 порций</li>
+            <li class="product-description__item">мышь в подарок</li>
+          </ul>
+          <div class="product-list__weight">2
+          <small>кг</small></div>
+        </div>
+      </label>
+    </li>
+    <li class="product-list__item">
+      <input class="product-list__input" id="inputFish" type="checkbox" name="product" value="рыба">
+      <label for="inputFish"></label>
+    </li>
+    <li class="product-list__item">
+      <input class="product-list__input" id="inputChicken" type="checkbox" name="product" value="курица">
+      <label for="inputChicken"></label>
+    </li>
+  </ul>
+</section>
 
 
 <script src="https://unpkg.com/vue"></script>

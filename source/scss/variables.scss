@@ -1,4 +1,13 @@
 @font-face {
-  font-family: "RobotoRegular";
-  src : url("../fonts/Exo2.0-Thin.otf");
+  font-family: "Exo2.0";
+  src: url("../fonts/Exo2.0-Thin.otf");
+  font-weight: normal;
 }
+
+@mixin reset-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+$blue: #1698d9;
