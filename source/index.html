@@ -19,7 +19,7 @@
           <div class="product-list__content-wrapper">
           <span class="product-list__description">Сказочное заморское яство</span>
           <h3 class="product-list__title">Нямушка</h3>
-          <span class="product-list__title-description">с фуа-гра</span>
+          <span class="product-list__title-description">с {{ products[0] }}</span>
           <ul class="product-description__list">
             <li class="product-description__item">10 порций</li>
             <li class="product-description__item">мышь в подарок</li>
@@ -59,7 +59,7 @@
             <h3 class="product-list__title">Нямушка</h3>
             <span class="product-list__title-description">с фуа-гра</span>
             <ul class="product-description__list">
-              <li class="product-description__item">10 порций</li>
+              <li class="product-description__item">{{ list[0][0] }} порций</li>
               <li class="product-description__item">мышь в подарок</li>
             </ul>
             <div class="product-list__weight">0,5
@@ -69,9 +69,6 @@
       </label>
       <p class="product-list__message">Чего сидишь? Порадуй котэ, <a href="#">купи.</a></p>
     </li>
-  </ul>
-  <ul id="app">
-    <li v-for="product in products">{{ product }}</li>
   </ul>
 </section>
 <script src="https://unpkg.com/vue"></script>
