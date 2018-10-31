@@ -1,3 +1,4 @@
+
 .product-list {
   @include reset-list;
   display: flex;
@@ -23,24 +24,6 @@
   min-height: 480px;
 }
 
-.product-list__input:hover + label,
-.product-list__input:active + label,
-.product-list__input:focus + label {
-  .product-list__weight {
-    background: $light-blue;
-  }
-}
-
-.product-list__wrapper {
-  width: 320px;
-  height: 480px;
-  box-sizing: border-box;
-  padding: 22px 16px 16px 47px;
-  display: flex;
-  flex-direction: column;
-  background-image: url("../img/itemImageBg.png");
-}
-
 .product-list__weight {
   padding-top: 15px;
   padding-bottom: 10px;
@@ -59,6 +42,70 @@
   color: rgb(255, 255, 255);
   line-height: 0.524;
   text-align: center;
+}
+
+.product-list__input + label {
+  position: relative;
+  display: block;
+  box-sizing: border-box;
+  width: 320px;
+  min-height: 480px;
+  
+  &::before {
+    z-index: 2;
+    border-bottom: 4px solid $blue;
+    border-radius: 0 0 0 10px;
+    border-left: 4px solid $blue;
+    top: 40px;
+    left: 0;
+    width: 48px;
+    height: 440px;
+    content: "";
+    position: absolute;
+    box-sizing: border-box;
+    display: block;
+    background: $ligth-grey;
+  }
+  
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 4px;
+    background: $ligth-grey;
+    z-index: 0;
+    left: 15px;
+    width: 28px;
+    height: 56px;
+    border-left: 3px solid #1698d9;
+    transform: rotate(45deg);
+  }
+}
+
+.product-list__wrapper {
+  position: relative;
+  border-bottom: 4px solid $blue;
+  border-right: 4px solid $blue;
+  border-top: 4px solid $blue;
+  border-radius: 0 10px 10px 0;
+  width: 280px;
+  height: 472px;
+  margin-left: 40px;
+  background-color: $ligth-grey;
+  z-index: 100;
+}
+
+.product-list__content-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 472px;
+  box-sizing: border-box;
+  margin-left: -36px;
+  border-radius: 7px;
+  background-image: url("../img/itemImageBg.png");
+  background-position: bottom left;
+  background-repeat: no-repeat;
+  padding: 17px 15px 12px 44px;
 }
 
 .product-list__weight small {
@@ -119,11 +166,107 @@
 .product-description__list {
   @include reset-list;
   margin: 16px 0 0;
-
 }
 
 .product-list__item {
   margin-top: 0;
-  margin-bottom: 0;
   line-height: 13px;
+  margin-bottom: 4px;
+}
+
+.product-list__input:hover + label,
+.product-list__input:active + label,
+.product-list__input:focus + label {
+  
+  &::before {
+    border-bottom: 4px solid $light-blue;
+    border-left: 4px solid $light-blue;
+  }
+  
+  &::after {
+    border-left: 3px solid $light-blue;
+  }
+  
+  .product-list__weight {
+    background: $light-blue;
+  }
+  .product-list__wrapper {
+    border-bottom: 4px solid $light-blue;
+    border-right: 4px solid $light-blue;
+    border-top: 4px solid $light-blue;
+  }
+}
+
+.product-list__input:checked + label {
+  
+  &::before {
+    border-bottom: 4px solid $pink;
+    border-left: 4px solid $pink;
+  }
+  
+  &::after {
+    border-left: 3px solid $pink;
+  }
+  
+  .product-list__weight {
+    background: $pink;
+  }
+  .product-list__wrapper {
+    border-bottom: 4px solid $pink;
+    border-right: 4px solid $pink;
+    border-top: 4px solid $pink;
+  }
+}
+
+.product-list__input:checked:hover + label {
+  
+  &::before {
+    border-bottom: 4px solid $light-pink;
+    border-left: 4px solid $light-pink;
+  }
+  
+  &::after {
+    border-left: 3px solid $light-pink;
+  }
+  
+  .product-list__weight {
+    background: $light-pink;
+  }
+  
+  .product-list__wrapper {
+    border-bottom: 4px solid $light-pink;
+    border-right: 4px solid $light-pink;
+    border-top: 4px solid $light-pink;
+  }
+  .product-list__description {
+    color: $light-pink;
+  }
+}
+
+.product-list__input:disabled + label {
+  .product-list__content-wrapper {
+    opacity: 0.2;
+  }
+  &::before {
+    border-bottom: 4px solid $grey;
+    border-left: 4px solid $grey;
+  }
+  
+  &::after {
+    border-left: 3px solid $grey;
+  }
+  
+  .product-list__weight {
+    background: $grey;
+  }
+  
+  .product-list__wrapper {
+    border-bottom: 4px solid $grey;
+    border-right: 4px solid $grey;
+    border-top: 4px solid $grey;
+  }
+}
+
+.product-list__input:disabled ~ .product-list__message {
+  color: $yellow;
 }
