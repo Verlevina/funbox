@@ -28,6 +28,7 @@
   padding-top: 15px;
   padding-bottom: 10px;
   box-sizing: border-box;
+  line-height: 1;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -40,7 +41,6 @@
   font-size: 42px;
   font-family: "Trebuchet MS";
   color: rgb(255, 255, 255);
-  line-height: 0.524;
   text-align: center;
 }
 
@@ -88,7 +88,7 @@
   border-right: 4px solid $blue;
   border-top: 4px solid $blue;
   border-radius: 0 10px 10px 0;
-  width: 280px;
+  width: 276px;
   height: 472px;
   margin-left: 40px;
   background-color: $ligth-grey;
@@ -105,7 +105,7 @@
   background-image: url("../img/itemImageBg.png");
   background-position: bottom left;
   background-repeat: no-repeat;
-  padding: 17px 15px 12px 44px;
+  padding: 17px 11px 10px 44px;
 }
 
 .product-list__weight small {
@@ -122,8 +122,8 @@
 
 .product-list__title {
   font-size: 48px;
-  margin-top: 5px;
-  margin-bottom: -4px;
+  margin-top: 7px;
+  margin-bottom: -3px;
   font-family: "Trebuchet MS";
   color: rgb(0, 0, 0);
   font-weight: bold;
@@ -166,12 +166,15 @@
 .product-description__list {
   @include reset-list;
   margin: 16px 0 0;
+  letter-spacing: -0.5px;
 }
 
 .product-list__item {
   margin-top: 0;
-  line-height: 13px;
   margin-bottom: 4px;
+  font-family: "Trebuchet MS";
+  line-height: 15px;
+  font-size: 15px;
 }
 
 .product-list__input:hover + label,
@@ -189,6 +192,8 @@
   
   .product-list__weight {
     background: $light-blue;
+
+  
   }
   .product-list__wrapper {
     border-bottom: 4px solid $light-blue;

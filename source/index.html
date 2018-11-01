@@ -12,12 +12,12 @@
 	<h1 class="visually-hidden">Корм для кошек Нямушка</h1>
 	<p class="page-title">Ты сегодня покормил кота?</p>
   <ul class="product-list" id="productList">
-    <li class="product-list__item"  v-for="(productItem, productIndex) in products">
-      <input class="product-list__input" v-bind:id="productIndex + 'product'" type="checkbox" v-bind:name="productIndex + 'product'" v-bind:value="productItem" v-bind:disabled="disabled[productIndex]">
+    <li class="product-list__item"  v-for="(productItem, productIndex) in products" @mouseover="changeTopText(productIndex)" @mouseout="changeTopTextOver()">
+      <input class="product-list__input"  v-model="checkboxes"  v-bind:checked="checkboxes.indexOf( productIndex ) != -1" v-bind:id="productIndex + 'product'" type="checkbox" v-bind:name="productIndex + 'product'" v-bind:value="productIndex" v-bind:disabled="disabled[productIndex]">
       <label v-bind:for="productIndex + 'product'">
         <div class="product-list__wrapper">
           <div class="product-list__content-wrapper">
-          <span class="product-list__description">{{ message }}</span>
+          <span class="product-list__description">{{ topMessages[productIndex] }}</span>
           <h3 class="product-list__title">Нямушка</h3>
           <span class="product-list__title-description">с {{ productItem }}</span>
           <ul class="product-description__list">
