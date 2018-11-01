@@ -39,7 +39,7 @@
   background: $blue;
   border-radius: 100%;
   font-size: 42px;
-  font-family: "Trebuchet MS";
+  font-family: "Trebuchet MS", serif;
   color: rgb(255, 255, 255);
   text-align: center;
 }
@@ -114,7 +114,7 @@
 
 .product-list__description {
   font-size: 16px;
-  font-family: "Trebuchet MS";
+  font-family: "Trebuchet MS", serif;
   color: rgb(102, 102, 102);
   line-height: 1.2;
   text-align: left;
@@ -124,7 +124,7 @@
   font-size: 48px;
   margin-top: 7px;
   margin-bottom: -3px;
-  font-family: "Trebuchet MS";
+  font-family: "Trebuchet MS", serif;
   color: rgb(0, 0, 0);
   font-weight: bold;
   line-height: 1.2;
@@ -133,7 +133,7 @@
 
 .product-list__title span {
   font-size: 24px;
-  font-family: "Trebuchet MS";
+  font-family: "Trebuchet MS", serif;
   color: rgb(0, 0, 0);
   font-weight: bold;
   line-height: 1.2;
@@ -142,7 +142,7 @@
 
 .product-list__message {
   font-size: 13px;
-  font-family: "Trebuchet MS";
+  font-family: "Trebuchet MS", serif;
   color: rgb(255, 255, 255);
   line-height: 1.231;
   text-align: center;
@@ -156,7 +156,7 @@
 
 .product-list__title-description {
   font-size: 24px;
-  font-family: "Trebuchet MS";
+  font-family: "Trebuchet MS", serif;
   color: rgb(0, 0, 0);
   font-weight: bold;
   line-height: 1.2;
@@ -172,7 +172,7 @@
 .product-list__item {
   margin-top: 0;
   margin-bottom: 4px;
-  font-family: "Trebuchet MS";
+  font-family: "Trebuchet MS", serif;
   line-height: 15px;
   font-size: 15px;
 }
