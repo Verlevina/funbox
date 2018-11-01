@@ -12,58 +12,19 @@
 	<h1 class="visually-hidden">Корм для кошек Нямушка</h1>
 	<p class="page-title">Ты сегодня покормил кота?</p>
   <ul class="product-list" id="productList">
-    <li class="product-list__item">
-      <input class="product-list__input" id="inputFuaGra" type="checkbox" name="product" value="фуа-гра">
-      <label for="inputFuaGra">
+    <li class="product-list__item"  v-for="(productItem, productIndex) in products">
+      <input class="product-list__input" v-bind:id="productIndex + 'product'" type="checkbox" v-bind:name="productIndex + 'product'" v-bind:value="productItem" v-bind:disabled="disabled[productIndex]">
+      <label v-bind:for="productIndex + 'product'">
         <div class="product-list__wrapper">
           <div class="product-list__content-wrapper">
-          <span class="product-list__description">Сказочное заморское яство</span>
+          <span class="product-list__description">{{ message }}</span>
           <h3 class="product-list__title">Нямушка</h3>
-          <span class="product-list__title-description">с {{ products[0] }}</span>
+          <span class="product-list__title-description">с {{ productItem }}</span>
           <ul class="product-description__list">
-            <li class="product-description__item">10 порций</li>
-            <li class="product-description__item">мышь в подарок</li>
+            <li class="product-description__item"  v-for="(item, index) in list[productIndex]">{{ list[productIndex][index] }}</li>
           </ul>
-          <div class="product-list__weight">0,5
+          <div class="product-list__weight">{{ weight[productIndex] }}
           <small>кг</small></div>
-          </div>
-        </div>
-      </label>
-      <p class="product-list__message">Чего сидишь? Порадуй котэ, <a href="#">купи.</a></p>
-    </li>
-    <li class="product-list__item">
-      <input class="product-list__input" id="inputFish" type="checkbox" name="product" value="рыба">
-      <label for="inputFish">
-        <div class="product-list__wrapper">
-          <div class="product-list__content-wrapper">
-            <span class="product-list__description">Сказочное заморское яство</span>
-            <h3 class="product-list__title">Нямушка</h3>
-            <span class="product-list__title-description">с фуа-гра</span>
-            <ul class="product-description__list">
-              <li class="product-description__item">10 порций</li>
-              <li class="product-description__item">мышь в подарок</li>
-            </ul>
-            <div class="product-list__weight">0,5
-              <small>кг</small></div>
-          </div>
-        </div>
-      </label>
-      <p class="product-list__message">Чего сидишь? Порадуй котэ, <a href="#">купи.</a></p>
-    </li>
-    <li class="product-list__item">
-      <input class="product-list__input" id="inputChicken" type="checkbox" name="product" value="курица" disabled>
-      <label for="inputChicken">
-        <div class="product-list__wrapper">
-          <div class="product-list__content-wrapper">
-            <span class="product-list__description">Сказочное заморское яство</span>
-            <h3 class="product-list__title">Нямушка</h3>
-            <span class="product-list__title-description">с фуа-гра</span>
-            <ul class="product-description__list">
-              <li class="product-description__item">{{ list[0][0] }} порций</li>
-              <li class="product-description__item">мышь в подарок</li>
-            </ul>
-            <div class="product-list__weight">0,5
-              <small>кг</small></div>
           </div>
         </div>
       </label>

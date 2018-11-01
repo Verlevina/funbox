@@ -1,42 +1,24 @@
 'use strict';
-var app = new Vue ({
-    el: '#app',
-    data: {
-        title: 'hello' + '!!!!!!!!!!!!!!!!!!!!!!!!!',
-        inputText: '',
-        showTitle: true,
-        numbers:[],
-        delLi:true
+var productList = new Vue({
+  el: '#productList',
+  data: {
+    products: window.data.products,
+    list: window.data.list,
+    weight: window.data.weight,
+    disabled: window.data.disable,
+    messages: window.data.messages,
 
-    },
-    methods: {
-        changeText: function () {
-            this.title = "new text";
-        },
-        setMessage: function (evt) {
-            this.inputText = evt.target.value;
-        },
-        addNumber: function () {
-           this.numbers.push(Math.random());
-        }
-    }
-});
+},
 
-var second = new Vue ({
-    el: '#second',
-    data: {
-        sum: 0,
-        x: 0,
-        y: 0
-    },
-    methods: {
-        addNnumber: function (event, add) {
-            this.sum+=add;
-            event.target.style.color = 'blue';
-        },
-        onMouseMove: function(evnt) {
-            this.x=evnt.clientX;
-            this.y=evnt.clientY;
-        }
-    }
-});
+methods: {
+
+}
+,
+
+computed: {
+  message: function () {
+    return this.messages[0];
+  },
+}
+})
+;
