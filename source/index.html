@@ -12,12 +12,15 @@
 	<h1 class="visually-hidden">Корм для кошек Нямушка</h1>
 	<p class="page-title">Ты сегодня покормил кота?</p>
   <ul class="product-list" id="productList">
-    <li class="product-list__item"  v-for="(productItem, productIndex) in products" @mouseover="changeTopText(productIndex)" @mouseout="changeTopTextOver()">
+    <li class="product-list__item"  v-for="(productItem, productIndex) in products">
       <input class="product-list__input"  v-model="checkboxes"  v-bind:checked="checkboxes.indexOf( productIndex ) != -1" v-bind:id="productIndex + 'product'" type="checkbox" v-bind:name="productIndex + 'product'" v-bind:value="productIndex" v-bind:disabled="disabled[productIndex]">
       <label v-bind:for="productIndex + 'product'">
         <div class="product-list__wrapper">
           <div class="product-list__content-wrapper">
-          <span class="product-list__description">{{ topMessages[productIndex] }}</span>
+            <span class="product-list__description">
+              <span class="product-list__description-main">{{ messages[0] }}</span>
+              <span class="product-list__description-hover">{{ messages[1] }}</span>
+            </span>
           <h3 class="product-list__title">Нямушка</h3>
           <span class="product-list__title-description">с {{ productItem }}</span>
           <ul class="product-description__list">
@@ -28,7 +31,11 @@
           </div>
         </div>
       </label>
-      <p class="product-list__message">Чего сидишь? Порадуй котэ, <a href="#">купи.</a></p>
+      <p class="product-list__message">
+        Чего сидишь? Порадуй котэ,
+        <a v-on:click.prevent="linkClick(productIndex)" href="#">купи.</a>
+      </p>
+      <p class="product-list__message product-list__message--disabled">Печалька, с {{productItem}} закончился</p>
     </li>
   </ul>
 </section>

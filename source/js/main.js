@@ -8,22 +8,16 @@
       weight: window.data.weight,
       disabled: window.data.disable,
       messages: window.data.messages,
-      topMessages: [window.data.messages[0], window.data.messages[0], window.data.messages[0]],
       checkboxes: []
     },
-
     methods: {
-      changeTopText: function (index) {
-        if (+this.checkboxes.indexOf(index) != -1) {
-          return this.topMessages[index] = window.data.messages[1];
+      linkClick: function (index) {
+        if (this.checkboxes.indexOf( index ) === -1) {
+          return this.checkboxes.push(index);
         }
-        return this.topMessages[index] = window.data.messages[0];
-      },
-      changeTopTextOver: function () {
-        this.topMessages = [window.data.messages[0], window.data.messages[0], window.data.messages[0]]
+        return;
       }
-    },
+    }
 
-    computed: {}
   });
 })();
