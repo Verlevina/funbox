@@ -12,7 +12,7 @@
     },
     methods: {
       linkClick: function (index) {
-        if (this.checkboxes.indexOf( index ) === -1) {
+        if (this.checkboxes.indexOf( index ) == -1) {
           return this.checkboxes.push(index);
         }
         return;
