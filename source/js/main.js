@@ -8,7 +8,7 @@
       weight: window.data.weight,
       disabled: window.data.disable,
       messages: window.data.messages,
-      checkboxes: [0,1]
+      checkboxes: []
     },
     methods: {
       linkClick: function (index) {
