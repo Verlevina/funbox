@@ -8,9 +8,12 @@
   <link rel="stylesheet" href="css/main.css">
 </head>
 <body class="page-body">
-<section class="wrapper page-body__wrapper">
-	<h1 class="visually-hidden">Корм для кошек Нямушка</h1>
+<main class="wrapper page-body__wrapper">
+  <h1 class="visually-hidden">Корм для кошек Нямушка</h1>
+<section>
+  <h2 class="visually-hidden">Наш ассортимент</h2>
 	<p class="page-title">Ты сегодня покормил кота?</p>
+  <form action="#" method="post">
   <ul class="product-list" id="productList">
     <li class="product-list__item" v-for="(productItem, productIndex) in products">
       <input class="product-list__input" v-model="checkboxes" v-bind:checked="checkboxes.indexOf( productIndex ) != -1" v-bind:id="productIndex + 'product'" type="checkbox" v-bind:name="productIndex + 'product'" v-bind:value="productIndex" v-bind:disabled="disabled[productIndex]">
@@ -38,7 +41,9 @@
       <p class="product-list__message product-list__message--disabled">Печалька, с {{productItem}} закончился</p>
     </li>
   </ul>
+  </form>
 </section>
+</main>
 <script src="https://unpkg.com/vue"></script>
 <script src="js/data.js"></script>
 <script src="js/main.js"></script>

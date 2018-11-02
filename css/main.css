@@ -25,7 +25,8 @@
 .page-body__wrapper {
   margin: auto;
   width: 100%;
-  max-width: 1200px; }
+  max-width: 1200px;
+  min-width: 320px; }
 
 .visually-hidden {
   position: absolute;
@@ -48,6 +49,10 @@
   color: #ffffff;
   text-align: center;
   text-shadow: 0 1px 0 rgba(0, 0, 0, 0.004); }
+
+@media (max-width: 600px) {
+  .page-title {
+    font-size: 30px; } }
 
 .product-list {
   margin: 0;
