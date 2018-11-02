@@ -13,6 +13,7 @@ var webp = require('gulp-webp');
 var posthtml = require("gulp-posthtml");
 var include = require("posthtml-include");
 var del = require('del');
+var ghPages = require('gulp-gh-pages');
 
 gulp.task("css", function () {
   return gulp.src("source/scss/main.scss")
@@ -93,3 +94,8 @@ gulp.task("clear", function () {
 gulp.task("build", gulp.series("clear","copy","css", "html"));
 
 gulp.task("start", gulp.series("build", "server"));
+
+gulp.task('deploy', function() {
+  return gulp.src('./build/**/*')
+    .pipe(ghPages());
+});

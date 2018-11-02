@@ -9,3 +9,9 @@
   text-align: center;
   text-shadow: 0 1px 0 rgba(0, 0, 0, 0.004);
 }
+
+@media (max-width: 600px) {
+  .page-title {
+    font-size: 30px;
+  }
+}
